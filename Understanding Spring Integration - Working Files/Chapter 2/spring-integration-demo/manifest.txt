@@ -1,0 +1,52 @@
+Users\Training\Desktop\Courses\Spring Integration\Lessons\0200\0206 Spring Integration Demonstration\spring-integration-demo
+   │
+   ├[.mvn]
+   │   │
+   │   └[wrapper]
+   │       │
+   │       ├maven-wrapper
+   │       └maven-wrapper
+   ├[.settings]
+   │   │
+   │   ├com.springsource.sts.config.flow
+   │   ├org.eclipse.core.resources
+   │   ├org.eclipse.jdt.core
+   │   ├org.eclipse.m2e.core
+   │   └org.eclipse.wst.common.project.facet.core
+   ├[src]
+   │   │
+   │   ├[main]
+   │   │   │
+   │   │   ├[java]
+   │   │   │   │
+   │   │   │   └[com]
+   │   │   │       │
+   │   │   │       └[oreilly]
+   │   │   │           │
+   │   │   │           └[demo]
+   │   │   │               │
+   │   │   │               ├CustomGateway
+   │   │   │               ├PrintService
+   │   │   │               ├ReverseService
+   │   │   │               └SpringIntegrationDemoApplication
+   │   │   └[resources]
+   │   │       │
+   │   │       ├application
+   │   │       └integration-context
+   │   └[test]
+   │       │
+   │       └[java]
+   │           │
+   │           └[com]
+   │               │
+   │               └[oreilly]
+   │                   │
+   │                   └[demo]
+   │                       │
+   │                       └SpringIntegrationDemoApplicationTests
+   ├
+   ├
+   ├
+   ├mvnw
+   ├mvnw
+   └pom

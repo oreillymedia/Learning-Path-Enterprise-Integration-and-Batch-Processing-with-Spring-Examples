@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.2.xsd">
+
+	<int:gateway service-interface="com.oreilly.integration.PrinterGateway"
+		default-request-channel="inputChannel"/>
+	
+	<bean id="customRouter" class="com.oreilly.integration.CustomRouter"/>
+	
+	<int:router ref="customRouter" input-channel="inputChannel"/>
+	  			
+	<int:channel id="inputChannel" />		
+
+	<int:channel id="defaultChannel"/>
+	
+	<bean id="printService" class="com.oreilly.integration.PrintService"/>
+
+	<bean id="numericPrintService" class="com.oreilly.integration.NumericPrintService"/>
+	
+	<bean id="defaultService" class="com.oreilly.integration.DefaultService"/>
+
+	<int:service-activator ref="defaultService" method="print" input-channel="defaultChannel"/>
+
+	<int:service-activator ref="numericPrintService" method="print" input-channel="intChannel"/>
+
+	<int:service-activator ref="printService" method="print" input-channel="stringChannel"/>
+
+</beans>

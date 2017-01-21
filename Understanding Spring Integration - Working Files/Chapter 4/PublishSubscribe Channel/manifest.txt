@@ -1,0 +1,102 @@
+Users\Training\Desktop\Courses\Spring Integration\Lessons\0400\0406 PublishSubscribe Channel\PublishSubscribe Channel
+   │
+   ├[.mvn]
+   │   │
+   │   └[wrapper]
+   │       │
+   │       ├maven-wrapper
+   │       └maven-wrapper
+   ├[.settings]
+   │   │
+   │   ├com.springsource.sts.config.flow
+   │   ├org.eclipse.core.resources
+   │   ├org.eclipse.jdt.core
+   │   ├org.eclipse.m2e.core
+   │   └org.eclipse.wst.common.project.facet.core
+   ├[bin]
+   │   │
+   │   ├[.mvn]
+   │   │   │
+   │   │   └[wrapper]
+   │   │       │
+   │   │       ├maven-wrapper
+   │   │       └maven-wrapper
+   │   ├[.settings]
+   │   │   │
+   │   │   ├org.eclipse.core.resources
+   │   │   └org.eclipse.m2e.core
+   │   ├[src]
+   │   │   │
+   │   │   ├[main]
+   │   │   │   │
+   │   │   │   ├[java]
+   │   │   │   │   │
+   │   │   │   │   └[com]
+   │   │   │   │       │
+   │   │   │   │       └[oreilly]
+   │   │   │   │           │
+   │   │   │   │           └[integration]
+   │   │   │   │               │
+   │   │   │   │               └SpringIntegrationApplication
+   │   │   │   └[resources]
+   │   │   │       │
+   │   │   │       └application
+   │   │   └[test]
+   │   │       │
+   │   │       └[java]
+   │   │           │
+   │   │           └[com]
+   │   │               │
+   │   │               └[oreilly]
+   │   │                   │
+   │   │                   └[integration]
+   │   │                       │
+   │   │                       └SpringIntegrationApplicationTests
+   │   ├[target]
+   │   │   │
+   │   │   └[classes]
+   │   │       │
+   │   │       └[META-INF]
+   │   │           │
+   │   │           └MANIFEST
+   │   ├
+   │   ├mvnw
+   │   ├mvnw
+   │   └pom
+   ├[src]
+   │   │
+   │   ├[main]
+   │   │   │
+   │   │   ├[java]
+   │   │   │   │
+   │   │   │   └[com]
+   │   │   │       │
+   │   │   │       └[oreilly]
+   │   │   │           │
+   │   │   │           └[integration]
+   │   │   │               │
+   │   │   │               ├PrinterGateway
+   │   │   │               ├PrintService
+   │   │   │               ├SpringIntegrationApplication
+   │   │   │               └UppercasePrintService
+   │   │   └[resources]
+   │   │       │
+   │   │       ├application
+   │   │       └integration-context
+   │   └[test]
+   │       │
+   │       └[java]
+   │           │
+   │           └[com]
+   │               │
+   │               └[oreilly]
+   │                   │
+   │                   └[integration]
+   │                       │
+   │                       └SpringIntegrationApplicationTests
+   ├
+   ├
+   ├
+   ├mvnw
+   ├mvnw
+   └pom

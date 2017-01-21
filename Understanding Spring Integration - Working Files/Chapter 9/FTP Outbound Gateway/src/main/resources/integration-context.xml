@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:int-file="http://www.springframework.org/schema/integration/file"
+	xmlns:int-ftp="http://www.springframework.org/schema/integration/ftp"
+	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file-4.2.xsd
+		http://www.springframework.org/schema/integration/ftp http://www.springframework.org/schema/integration/ftp/spring-integration-ftp-4.2.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-4.2.xsd">
+
+	<int:gateway service-interface="com.oreilly.integration.FileWriterGateway"
+		default-request-channel="ftpChannel"/>
+				
+	<bean id="ftpClientFactory" class="org.springframework.integration.ftp.session.DefaultFtpSessionFactory">
+		<property name="host" value="localhost"/>
+		<property name="port" value="21"/>
+		<property name="username" value="kbowersox"/>
+		<property name="password" value="password"/>
+	</bean>
+	
+	<int-ftp:outbound-gateway 
+		session-factory="ftpClientFactory"
+		command="get"
+		expression="payload"
+		request-channel="ftpChannel"
+		local-directory="src/test/write"
+		reply-channel="outboundChannel">
+	</int-ftp:outbound-gateway>
+	
+	<bean id="mp" class="com.oreilly.integration.MessagePrinter"/>
+	
+	<int-file:file-to-string-transformer input-channel="outboundChannel" output-channel="transformChannel"/>
+	
+	<int:service-activator ref="mp" method="print" input-channel="transformChannel"/>
+	
+	<int:channel id="ftpChannel"/>
+	<int:channel id="outboundChannel"/>
+	<int:channel id="transformChannel"/>
+	
+</beans>

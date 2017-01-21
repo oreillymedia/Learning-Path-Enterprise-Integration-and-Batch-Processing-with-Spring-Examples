@@ -1,0 +1,246 @@
+Users\Training\Desktop\Courses\Spring Integration\Lessons\0900\0905 FTP Outbound Channel Adapter\FTP Outbound Channel Adapter
+   │
+   ├[.mvn]
+   │   │
+   │   └[wrapper]
+   │       │
+   │       ├maven-wrapper
+   │       └maven-wrapper
+   ├[.settings]
+   │   │
+   │   ├com.springsource.sts.config.flow
+   │   ├org.eclipse.core.resources
+   │   ├org.eclipse.jdt.core
+   │   ├org.eclipse.m2e.core
+   │   └org.eclipse.wst.common.project.facet.core
+   ├[bin]
+   │   │
+   │   ├[.mvn]
+   │   │   │
+   │   │   └[wrapper]
+   │   │       │
+   │   │       ├maven-wrapper
+   │   │       └maven-wrapper
+   │   ├[.settings]
+   │   │   │
+   │   │   ├org.eclipse.core.resources
+   │   │   └org.eclipse.m2e.core
+   │   ├[src]
+   │   │   │
+   │   │   ├[main]
+   │   │   │   │
+   │   │   │   ├[java]
+   │   │   │   │   │
+   │   │   │   │   └[com]
+   │   │   │   │       │
+   │   │   │   │       └[oreilly]
+   │   │   │   │           │
+   │   │   │   │           └[integration]
+   │   │   │   │               │
+   │   │   │   │               └SpringIntegrationApplication
+   │   │   │   └[resources]
+   │   │   │       │
+   │   │   │       └application
+   │   │   └[test]
+   │   │       │
+   │   │       └[java]
+   │   │           │
+   │   │           └[com]
+   │   │               │
+   │   │               └[oreilly]
+   │   │                   │
+   │   │                   └[integration]
+   │   │                       │
+   │   │                       └SpringIntegrationApplicationTests
+   │   ├[target]
+   │   │   │
+   │   │   └[classes]
+   │   │       │
+   │   │       └[META-INF]
+   │   │           │
+   │   │           └MANIFEST
+   │   ├
+   │   ├mvnw
+   │   ├mvnw
+   │   └pom
+   ├[src]
+   │   │
+   │   ├[main]
+   │   │   │
+   │   │   ├[java]
+   │   │   │   │
+   │   │   │   └[com]
+   │   │   │       │
+   │   │   │       └[oreilly]
+   │   │   │           │
+   │   │   │           └[integration]
+   │   │   │               │
+   │   │   │               ├FilePrinter
+   │   │   │               ├FileWriterGateway
+   │   │   │               └SpringIntegrationApplication
+   │   │   └[resources]
+   │   │       │
+   │   │       ├application
+   │   │       └integration-context
+   │   └[test]
+   │       │
+   │       ├[java]
+   │       │   │
+   │       │   └[com]
+   │       │       │
+   │       │       └[oreilly]
+   │       │           │
+   │       │           └[integration]
+   │       │               │
+   │       │               └SpringIntegrationApplicationTests
+   │       ├[read]
+   │       └[write]
+   │           │
+   │           └ftp-sample
+   ├[target]
+   │   │
+   │   ├[classes]
+   │   │   │
+   │   │   ├[com]
+   │   │   │   │
+   │   │   │   └[oreilly]
+   │   │   │       │
+   │   │   │       └[integration]
+   │   │   │           │
+   │   │   │           ├FilePrinter
+   │   │   │           ├FileWriterGateway
+   │   │   │           └SpringIntegrationApplication
+   │   │   ├[META-INF]
+   │   │   │   │
+   │   │   │   ├[maven]
+   │   │   │   │   │
+   │   │   │   │   └[com.oreilly.integration]
+   │   │   │   │       │
+   │   │   │   │       └[spring-integration]
+   │   │   │   │           │
+   │   │   │   │           ├pom
+   │   │   │   │           └pom
+   │   │   │   └MANIFEST
+   │   │   ├application
+   │   │   └integration-context
+   │   ├[Custom Router]
+   │   │   │
+   │   │   ├[.mvn]
+   │   │   │   │
+   │   │   │   └[wrapper]
+   │   │   │       │
+   │   │   │       ├maven-wrapper
+   │   │   │       └maven-wrapper
+   │   │   ├[.settings]
+   │   │   │   │
+   │   │   │   ├com.springsource.sts.config.flow
+   │   │   │   ├org.eclipse.core.resources
+   │   │   │   ├org.eclipse.jdt.core
+   │   │   │   ├org.eclipse.m2e.core
+   │   │   │   └org.eclipse.wst.common.project.facet.core
+   │   │   ├[bin]
+   │   │   │   │
+   │   │   │   ├[.mvn]
+   │   │   │   │   │
+   │   │   │   │   └[wrapper]
+   │   │   │   │       │
+   │   │   │   │       ├maven-wrapper
+   │   │   │   │       └maven-wrapper
+   │   │   │   ├[.settings]
+   │   │   │   │   │
+   │   │   │   │   ├org.eclipse.core.resources
+   │   │   │   │   └org.eclipse.m2e.core
+   │   │   │   ├[src]
+   │   │   │   │   │
+   │   │   │   │   ├[main]
+   │   │   │   │   │   │
+   │   │   │   │   │   ├[java]
+   │   │   │   │   │   │   │
+   │   │   │   │   │   │   └[com]
+   │   │   │   │   │   │       │
+   │   │   │   │   │   │       └[oreilly]
+   │   │   │   │   │   │           │
+   │   │   │   │   │   │           └[integration]
+   │   │   │   │   │   │               │
+   │   │   │   │   │   │               └SpringIntegrationApplication
+   │   │   │   │   │   └[resources]
+   │   │   │   │   │       │
+   │   │   │   │   │       └application
+   │   │   │   │   └[test]
+   │   │   │   │       │
+   │   │   │   │       └[java]
+   │   │   │   │           │
+   │   │   │   │           └[com]
+   │   │   │   │               │
+   │   │   │   │               └[oreilly]
+   │   │   │   │                   │
+   │   │   │   │                   └[integration]
+   │   │   │   │                       │
+   │   │   │   │                       └SpringIntegrationApplicationTests
+   │   │   │   ├[target]
+   │   │   │   │   │
+   │   │   │   │   └[classes]
+   │   │   │   │       │
+   │   │   │   │       └[META-INF]
+   │   │   │   │           │
+   │   │   │   │           └MANIFEST
+   │   │   │   ├
+   │   │   │   ├mvnw
+   │   │   │   ├mvnw
+   │   │   │   └pom
+   │   │   ├[src]
+   │   │   │   │
+   │   │   │   ├[main]
+   │   │   │   │   │
+   │   │   │   │   ├[java]
+   │   │   │   │   │   │
+   │   │   │   │   │   └[com]
+   │   │   │   │   │       │
+   │   │   │   │   │       └[oreilly]
+   │   │   │   │   │           │
+   │   │   │   │   │           └[integration]
+   │   │   │   │   │               │
+   │   │   │   │   │               ├CustomRouter
+   │   │   │   │   │               ├DefaultService
+   │   │   │   │   │               ├NumericPrintService
+   │   │   │   │   │               ├PrinterGateway
+   │   │   │   │   │               ├PrintService
+   │   │   │   │   │               └SpringIntegrationApplication
+   │   │   │   │   └[resources]
+   │   │   │   │       │
+   │   │   │   │       ├application
+   │   │   │   │       └integration-context
+   │   │   │   └[test]
+   │   │   │       │
+   │   │   │       └[java]
+   │   │   │           │
+   │   │   │           └[com]
+   │   │   │               │
+   │   │   │               └[oreilly]
+   │   │   │                   │
+   │   │   │                   └[integration]
+   │   │   │                       │
+   │   │   │                       └SpringIntegrationApplicationTests
+   │   │   ├
+   │   │   ├
+   │   │   ├
+   │   │   ├manifest
+   │   │   ├mvnw
+   │   │   ├mvnw
+   │   │   └pom
+   │   └[test-classes]
+   │       │
+   │       └[com]
+   │           │
+   │           └[oreilly]
+   │               │
+   │               └[integration]
+   │                   │
+   │                   └SpringIntegrationApplicationTests
+   ├
+   ├
+   ├
+   ├example
+   ├mvnw
+   ├mvnw
+   └pom
