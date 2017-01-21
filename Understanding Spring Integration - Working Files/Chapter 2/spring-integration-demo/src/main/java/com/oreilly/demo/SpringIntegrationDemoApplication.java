@@ -13,15 +13,16 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource("integration-context.xml")
 public class SpringIntegrationDemoApplication implements ApplicationRunner {
 
-	@Autowired
-	private CustomGateway gateway;
+    @Autowired
+    private CustomGateway gateway;
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringIntegrationDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringIntegrationDemoApplication.class, args);
+    }
 
-	@Override
-	public void run(ApplicationArguments arg0) throws Exception {
-		gateway.print("Hello World");
-	}
+    @Override
+    public void run(ApplicationArguments arg0) throws Exception {
+        gateway.print("Hello World");
+    }
+
 }
