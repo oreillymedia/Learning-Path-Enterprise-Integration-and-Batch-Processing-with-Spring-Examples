@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:int-ftp="http://www.springframework.org/schema/integration/ftp"
+	xmlns:int-jdbc="http://www.springframework.org/schema/integration/jdbc"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+	xmlns:int="http://www.springframework.org/schema/integration"
+	xmlns:int-xml="http://www.springframework.org/schema/integration/xml"
+	xsi:schemaLocation="http://www.springframework.org/schema/integration/jdbc http://www.springframework.org/schema/integration/jdbc/spring-integration-jdbc-4.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+		http://www.springframework.org/schema/integration/xml http://www.springframework.org/schema/integration/xml/spring-integration-xml-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms-4.2.xsd
+		http://www.springframework.org/schema/integration/ftp http://www.springframework.org/schema/integration/ftp/spring-integration-ftp-4.2.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd">
+
+	<int:gateway service-interface="com.oreilly.integration.SimpleGateway" 
+		default-request-channel="xmlInput"/>
+	
+	<int-xml:xpath-splitter
+		input-channel="xmlInput"
+		output-channel="xmlOutput">
+		<int-xml:xpath-expression expression="/people/person"></int-xml:xpath-expression>
+	</int-xml:xpath-splitter>
+	
+	<int-xml:xpath-filter
+		input-channel="xmlOutput"
+		output-channel="xmlFilter">
+		<int-xml:xpath-expression expression="/person/firstName = 'Kevin'"></int-xml:xpath-expression>
+	</int-xml:xpath-filter>	
+	
+	<bean class="com.oreilly.integration.MessagePrinter" id="printer"/>
+	
+	<int:service-activator ref="printer" input-channel="xmlFilter" method="printConsole"/>
+	
+	<int:channel id="xmlInput"/>
+	<int:channel id="xmlOutput"/>
+	<int:channel id="xmlFilter"/>
+	
+</beans>
